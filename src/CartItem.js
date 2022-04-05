@@ -7,12 +7,46 @@ class CartItem extends React.Component {
       title: 'Mobile Phone',
       price: 9999,
       qty: 1,
+      img: '',
     };
     // this.increaseQuantity = this.increaseQuantity.bind(this);
   }
   // we can use arrow function for binding because it will automatically bind the method
   increaseQuantity = () => {
-    console.log('this', this.state);
+    // this.setstate.qty += 1;
+    // console.log('this', this.state);
+    // // setState form 1
+    // this.setState({
+    //   qty: this.state.qty + 1,
+    // });
+
+    // setState form 2 shallow merging
+    this.setState((prevState) => {
+      return {
+        qty: prevState.qty + 1,
+      };
+    });
+  };
+
+  decreaseQuantity = () => {
+    // console.log('this', this.state);
+    // setState form 1
+    this.setState({
+    if(qty === 0){
+        
+    }
+      qty: this.state.qty - 1,
+    });
+
+    // setState form 2 shallow merging
+    this.setState((prevState) => {
+      if (this.state.qty === 0) {
+        return;
+      }
+      return {
+        qty: prevState.qty - 1,
+      };
+    });
   };
 
   render() {
@@ -42,6 +76,7 @@ class CartItem extends React.Component {
               alt="decrease"
               className="action-icons"
               src="https://cdn-icons-png.flaticon.com/128/992/992683.png"
+              onClick={this.decreaseQuantity}
             />
             <img
               alt="delete"
