@@ -19,34 +19,38 @@ class CartItem extends React.Component {
     // this.setState({
     //   qty: this.state.qty + 1,
     // });
-
     // setState form 2 shallow merging
-    this.setState((prevState) => {
-      return {
-        qty: prevState.qty + 1,
-      };
-    });
+    this.setState(
+      (prevState) => {
+        return {
+          qty: prevState.qty + 1,
+        };
+      },
+      () => {
+        console.log('this.state', this.state);
+      }
+    );
   };
 
   decreaseQuantity = () => {
-    // console.log('this', this.state);
-    // setState form 1
-    this.setState({
-    if(qty === 0){
-        
+    // if (this.state.qty === 0) {
+    //   return;
+    // }
+    const { qty } = this.state;
+    if (qty === 0) {
+      return;
     }
-      qty: this.state.qty - 1,
-    });
-
     // setState form 2 shallow merging
-    this.setState((prevState) => {
-      if (this.state.qty === 0) {
-        return;
+    this.setState(
+      (prevState) => {
+        return {
+          qty: prevState.qty - 1,
+        };
+      },
+      () => {
+        console.log('this.state', this.state);
       }
-      return {
-        qty: prevState.qty - 1,
-      };
-    });
+    );
   };
 
   render() {
