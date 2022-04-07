@@ -54,9 +54,8 @@ const CartItem = (props) => {
   // };
 
   //   object de-structuring means i want this properties from this.state which is constructor
-  const { title, price, qty } = this.props.product;
-  const { product, increaseQuantity, decreaseQuantity, deleteProduct } =
-    this.props;
+  const { title, price, qty } = props.product;
+  const { product, increaseQuantity, decreaseQuantity, deleteProduct } = props;
   return (
     <div className="cart-item">
       <div className="left-block">
@@ -84,7 +83,7 @@ const CartItem = (props) => {
             className="action-icons"
             src="https://cdn-icons-png.flaticon.com/128/992/992683.png"
             onClick={() => {
-              this.props.decreaseQuantity(this.props.product);
+              decreaseQuantity(product);
             }}
           />
           <img
