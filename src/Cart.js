@@ -9,27 +9,63 @@ class Cart extends React.Component {
         {
           price: 99,
           title: 'watch',
-          qty: 10,
+          qty: 5,
           img: '',
           id: 1,
         },
         {
           price: 39999,
           title: 'laptop',
-          qty: 40,
+          qty: 10,
           img: '',
           id: 2,
         },
         {
           price: 9999,
           title: 'mobile',
-          qty: 100,
+          qty: 15,
           img: '',
           id: 3,
         },
       ],
     };
   }
+
+  handleIncreaseQuantity = (product) => {
+    console.log('Hey please inc the qty of product ', product);
+    const { products } = this.state;
+    const index = products.indexOf(product);
+
+    products[index].qty += 1;
+
+    this.setState({
+      products: products,
+    });
+  };
+
+  handledecreaseQuantity = (product) => {
+    // console.log('Hey please inc the qty of product ', product);
+    const { products } = this.state;
+    const index = products.indexOf(product);
+    // console.log(index);
+    if (products[index].qty > 0) {
+      products[index].qty -= 1;
+    } else {
+      return;
+    }
+    this.setState({
+      products: products,
+    });
+  };
+
+  handleDeleteProduct = (id) => {
+    const { products } = this.state;
+    const items = products.filter((item) => item.id !== id);
+    this.setState({
+      products: items,
+    });
+  };
+
   render() {
     // products from state
     const { products } = this.state;
@@ -42,6 +78,9 @@ class Cart extends React.Component {
             <CartItem
               product={product}
               key={product.id}
+              increaseQuantity={this.handleIncreaseQuantity}
+              decreaseQuantity={this.handledecreaseQuantity}
+              deleteProduct={this.handleDeleteProduct}
               // func={() => {
               //   console.log('Akhilesh');
               // }}
