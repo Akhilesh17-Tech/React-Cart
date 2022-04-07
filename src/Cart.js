@@ -44,7 +44,7 @@ class Cart extends React.Component {
   };
 
   handledecreaseQuantity = (product) => {
-    // console.log('Hey please inc the qty of product ', product);
+    console.log('Hey please inc the qty of product ', product);
     const { products } = this.state;
     const index = products.indexOf(product);
     // console.log(index);
