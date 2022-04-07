@@ -1,16 +1,16 @@
 import React from 'react';
 
 class CartItem extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      title: 'Mobile Phone',
-      price: 9999,
-      qty: 1,
-      img: '',
-    };
-    // this.increaseQuantity = this.increaseQuantity.bind(this);
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     price: 999,
+  //     title: 'mobile phone',
+  //     qty: 1,
+  //     img: '',
+  //   };
+  // }
+
   // we can use arrow function for binding because it will automatically bind the method
   increaseQuantity = () => {
     // this.setstate.qty += 1;
@@ -55,7 +55,8 @@ class CartItem extends React.Component {
 
   render() {
     //   object de-structuring means i want this properties from this.state which is constructor
-    const { title, price, qty } = this.state;
+    console.log('this.props', this.props);
+    const { title, price, qty } = this.props.product;
     return (
       <div className="cart-item">
         <div className="left-block">
