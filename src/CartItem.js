@@ -54,12 +54,12 @@ const CartItem = (props) => {
   // };
 
   //   object de-structuring means i want this properties from this.state which is constructor
-  const { title, price, qty } = props.product;
+  const { title, price, qty, img } = props.product;
   const { product, increaseQuantity, decreaseQuantity, deleteProduct } = props;
   return (
     <div className="cart-item">
       <div className="left-block">
-        <img style={styles.image} alt="" />
+        <img style={styles.image} alt="" src={img} />
       </div>
       <div className="right-block">
         {/* without object destructuring we have to write this.state.propertName again & again */}

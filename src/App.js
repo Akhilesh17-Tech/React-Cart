@@ -11,21 +11,21 @@ class App extends React.Component {
           price: 99,
           title: 'watch',
           qty: 5,
-          img: '',
+          img: 'https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
           id: 1,
         },
         {
           price: 39999,
           title: 'laptop',
           qty: 10,
-          img: '',
+          img: 'https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg',
           id: 2,
         },
         {
           price: 9999,
           title: 'mobile',
           qty: 15,
-          img: '',
+          img: 'https://images.pexels.com/photos/1042143/pexels-photo-1042143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
           id: 3,
         },
       ],
@@ -78,6 +78,16 @@ class App extends React.Component {
     return count;
   };
 
+  getcartTotal = () => {
+    const { products } = this.state;
+    let cartTotal = 0;
+    products.map((item) => {
+      cartTotal = cartTotal + item.qty * item.price;
+    });
+
+    return cartTotal;
+  };
+
   render() {
     const { products } = this.state;
     return (
@@ -89,6 +99,10 @@ class App extends React.Component {
           decreaseQuantity={this.handledecreaseQuantity}
           deleteProduct={this.handleDeleteProduct}
         />
+
+        <div style={{ fontSize: 25, padding: 15 }}>
+          Total : {this.getcartTotal()}
+        </div>
       </div>
     );
   }
