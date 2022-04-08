@@ -8,24 +8,24 @@ class App extends React.Component {
     this.state = {
       products: [
         {
-          price: 99,
-          title: 'watch',
+          price: 9999,
+          title: 'Samsung Galaxy',
           qty: 5,
-          img: 'https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
           id: 1,
         },
         {
           price: 39999,
-          title: 'laptop',
+          title: 'Canon r5',
           qty: 10,
-          img: 'https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg',
+          img: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
           id: 2,
         },
         {
-          price: 9999,
-          title: 'mobile',
+          price: 65999,
+          title: 'iPhone 12',
           qty: 15,
-          img: 'https://images.pexels.com/photos/1042143/pexels-photo-1042143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          img: 'https://images.unsplash.com/photo-1567581935884-3349723552ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW9iaWxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
           id: 3,
         },
       ],
@@ -84,7 +84,6 @@ class App extends React.Component {
     products.map((item) => {
       cartTotal = cartTotal + item.qty * item.price;
     });
-
     return cartTotal;
   };
 
