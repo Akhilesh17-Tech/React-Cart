@@ -2,22 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { initializeApp } from 'firebase/app';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyB23Oz5mPP93es4PYtOkbkGKReQuWSY8xw',
-  authDomain: 'cart-b7475.firebaseapp.com',
-  projectId: 'cart-b7475',
-  storageBucket: 'cart-b7475.appspot.com',
-  messagingSenderId: '192526295101',
-  appId: '1:192526295101:web:be50baa118f0e8790c8a54',
+  apiKey: 'AIzaSyCd9Y05BXKO-w_EU0csFTh8drHklGDZ7N4',
+  authDomain: 'cart-878ae.firebaseapp.com',
+  projectId: 'cart-878ae',
+  storageBucket: 'cart-878ae.appspot.com',
+  messagingSenderId: '431375803832',
+  appId: '1:431375803832:web:124e5c19132c17ab291b4d',
 };
-const app = initializeApp(firebaseConfig);
-console.log(app);
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <App />,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
