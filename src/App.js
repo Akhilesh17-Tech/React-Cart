@@ -174,7 +174,7 @@ class App extends React.Component {
       .collection('products')
       .add({
         img: 'https://st.depositphotos.com/1001877/5138/i/600/depositphotos_51380105-stock-photo-washing-machine.jpg',
-        price: 999,
+        price: 9999,
         qty: 5,
         title: 'Washing Machine',
       })
