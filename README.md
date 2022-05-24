@@ -2,7 +2,7 @@
 The React-Cart App with few basic operations
 
 ## Demo link:
-Access my site at [google.com](https://google.com)
+Access my site at [Akhilcart.com]([https://google.com](https://akhilesh17-tech.github.io/React-Cart/))
 
 ## Table of Content:
 
