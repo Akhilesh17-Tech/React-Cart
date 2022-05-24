@@ -1,17 +1,46 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 const Navbar = (props) => {
   return (
-    <div style={styles.nav}>
-      <div style={styles.logo}>Akhil's Cart</div>
-      <div style={styles.cartIconContainer}>
-        <img
-          style={styles.cartIcon}
-          src="https://cdn-icons-png.flaticon.com/512/891/891462.png"
-          alt="cartIcon"
-        />
-        <div style={styles.cartCount}>{props.count}</div>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div className="container-fluid">
+        <span className="navbar-brand">Akhil's Cart</span>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <NavLink
+                className="nav-link border border-light rounded"
+                aria-current="page"
+                to="/"
+                onClick={props.addProduct}
+              >
+                Add a product
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div style={styles.cartIconContainer}>
+          <img
+            style={styles.cartIcon}
+            src="https://cdn-icons-png.flaticon.com/512/891/891462.png"
+            alt="cartIcon"
+          />
+          <div style={styles.cartCount}>{props.count}</div>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
@@ -21,20 +50,7 @@ const styles = {
     height: 32,
     marginRight: 50,
   },
-  logo: {
-    color: 'white',
-    marginLeft: 50,
-    fontSize: 25,
-    fontWeight: 900,
-  },
-  nav: {
-    height: 70,
-    background: '#4267b2',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    // border: '1px solid red',
-  },
+
   cartIconContainer: {
     position: 'relative',
     // border: '1px solid red',

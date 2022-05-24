@@ -1,10 +1,11 @@
-// import logo from './logo.svg';
 import React from 'react';
-// import CartItem from "./CartItem";
 import Cart from './Cart';
 import Navbar from './Navbar';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
+import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { BiRupee } from 'react-icons/bi';
 
 class App extends React.Component {
   constructor() {
@@ -189,23 +190,27 @@ class App extends React.Component {
   render() {
     const { products, loading } = this.state;
     return (
-      <div className="App">
-        <Navbar count={this.getCartCount()} />
-        <button onClick={this.addProduct} style={{ padding: 20, fontSize: 20 }}>
-          Add a product
-        </button>
-        {/* <h1>Cart</h1> */}
-        <Cart
-          products={products}
-          increaseQuantity={this.handleIncreaseQuantity}
-          decreaseQuantity={this.handleDecreaseQuantity}
-          deleteProduct={this.handleDeleteProduct}
-        />
-        {loading && <h1>Loading Products...</h1>}
-        <div style={{ padding: 10, fontSize: 20 }}>
-          TOTAL: {this.getCartTotal()}
+      <Router>
+        <div className="App">
+          <Navbar count={this.getCartCount()} addProduct={this.addProduct} />
+          {/* <h1>Cart</h1> */}
+
+          <Cart
+            products={products}
+            increaseQuantity={this.handleIncreaseQuantity}
+            decreaseQuantity={this.handleDecreaseQuantity}
+            deleteProduct={this.handleDeleteProduct}
+          />
+
+          {loading && <h1>Loading Products...</h1>}
         </div>
-      </div>
+        <div class="fixed-bottom bg-dark">
+          <div className="text-light fs-3 p-2 text-center">
+            Grand Total : <BiRupee />
+            {this.getCartTotal()}
+          </div>
+        </div>
+      </Router>
     );
   }
 }

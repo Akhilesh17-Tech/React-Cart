@@ -4,7 +4,7 @@ const Cart = (props) => {
   // products from state
   const { products } = props;
   return (
-    <div className="cart">
+    <div className="cart offcanvas-body m-5 container1">
       {/* <CartItem qty={1} price={999} title={'watch'} img={''} /> */}
       {products.map((product) => {
         return (
